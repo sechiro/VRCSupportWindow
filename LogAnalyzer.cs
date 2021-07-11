@@ -258,6 +258,8 @@ namespace VRCSupportWindow
                                 var mainWindow = (MainWindow)App.Current.MainWindow;
 
                                 //最後に訪問したワールドに戻るためのURLを表示
+                                mainWindow.lastWorldUrlLinkText5.Text = mainWindow.lastWorldUrlLinkText4.Text;
+                                mainWindow.lastWorldUrlLinkText4.Text = mainWindow.lastWorldUrlLinkText3.Text;
                                 mainWindow.lastWorldUrlLinkText3.Text = mainWindow.lastWorldUrlLinkText2.Text;
                                 mainWindow.lastWorldUrlLinkText2.Text = mainWindow.lastWorldUrlLinkText1.Text;
                                 mainWindow.lastWorldUrlLinkText1.Text = url;
