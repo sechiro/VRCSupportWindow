@@ -12,7 +12,7 @@
         ContentRendered="Window_ContentRendered"
         Background="{x:Static SystemColors.MenuBarBrush}">
   <DockPanel>
-    <Menu DockPanel.Dock="Top"
+    <Menu DockPanel.Dock="Top"  Margin="0 0 0 10"
           Background="{x:Static SystemColors.MenuBarBrush}">
       <MenuItem x:Name="MenuStart"
                 Header="スタート(_S)"
@@ -55,7 +55,7 @@
           </TreeView.ItemTemplate>
         </TreeView> -->
         <TextBlock x:Name="Logs"
-                   Margin="10 10 10 0"
+                   Margin="10 0 10 0"
                    TextWrapping="Wrap"
                    Background="{x:Static SystemColors.WindowBrush}"
                    Text="">
