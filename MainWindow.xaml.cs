@@ -33,9 +33,20 @@ namespace VRCSupportWindow
         private bool _is_analyzing = false;
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public MainWindow()
+        public MainWindow(StartupEventArgs e)
         {
             InitializeComponent();
+            foreach (string arg in e.Args)
+            {
+                switch (arg)
+                {
+                    case "/autostart":
+                        _Button_RunExecAnalyzeLog();
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         /**
@@ -43,11 +54,14 @@ namespace VRCSupportWindow
         */
         public async void Button_RunExecAnalyzeLog(object sender, RoutedEventArgs e)
         {
+            //初期化処理時に動作させるため、ロジック全体を画面に依存しないプライベートメソッドに移動
+            _Button_RunExecAnalyzeLog();
+        }
+        private async void _Button_RunExecAnalyzeLog(){
             //表示データを初期化
             Logs.Text = "";
 
             statusBar.Content = "ログデータ解析中です。";
-            //loadingText.Visibility = Visibility.Visible;
             MenuStart.Visibility = Visibility.Collapsed;
             MenuStop.Visibility = Visibility.Visible;
 

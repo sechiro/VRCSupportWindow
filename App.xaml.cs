@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.IO;
 using System.Threading;
+using System.Windows.Controls;
 
 
 namespace VRCSupportWindow
@@ -27,5 +28,12 @@ namespace VRCSupportWindow
 
             return appPath;
         }
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            // メイン ウィンドウ表示
+            MainWindow window = new MainWindow(e);
+            window.Show();
+        }
+
     }
 }
