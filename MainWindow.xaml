@@ -1,0 +1,125 @@
+﻿<Window x:Class="VRCSupportWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VRCSupportWindow"
+        mc:Ignorable="d"
+        Title="VRCSupportWindow"
+        Height="600"
+        Width="450"
+        ResizeMode="CanResizeWithGrip"
+        ContentRendered="Window_ContentRendered"
+        Background="{x:Static SystemColors.MenuBarBrush}">
+  <DockPanel>
+    <Menu DockPanel.Dock="Top"
+          Background="{x:Static SystemColors.MenuBarBrush}">
+      <MenuItem x:Name="MenuStart"
+                Header="スタート(_S)"
+                Click="Button_RunExecAnalyzeLog" />
+      <MenuItem x:Name="MenuStop"
+                Header="ストップ(_S)"
+                Click="Button_StopExecAnalyzeLog"
+                Visibility="Collapsed" />
+      <MenuItem Header="ヘルプ(_H)">
+        <MenuItem Header="はじめて利用される方へ(_U)"
+                  Click="Button_FirstHelp" />
+        <MenuItem Header="README(_R)※ブラウザが開きます"
+                  Click="Button_Readme" />
+        <Separator />
+        <MenuItem Header="クレジット(_C)"
+                  Click="Button_Credit" />
+      </MenuItem>
+    </Menu>
+    <StackPanel>
+      <ScrollViewer VerticalScrollBarVisibility="Auto"
+                    CanContentScroll="True">
+        <!-- <TreeView x:Name="HistoryTree"
+                  Margin="10 10 10 10"
+                  Height="400">
+          <TreeView.ItemTemplate>
+            <HierarchicalDataTemplate DataType="local:Dto"
+                                      ItemsSource="{Binding Dtos}">
+              <TextBlock Text="{Binding Name}"
+                         ToolTip="{Binding Desc}" Tag="{Binding Tag}">
+                <TextBlock.ContextMenu>
+                  <ContextMenu>
+                    <MenuItem Header="名前をコピー"
+                              Click="MenuItem_Click" />
+                  </ContextMenu>
+                </TextBlock.ContextMenu>
+              </TextBlock>
+            </HierarchicalDataTemplate>
+          </TreeView.ItemTemplate>
+        </TreeView> -->
+        <TextBlock x:Name="Logs"
+                   Margin="10 10 10 0"
+                   TextWrapping="Wrap"
+                   Height="380"
+                   Background="{x:Static SystemColors.WindowBrush}"
+                   Text="" />
+      </ScrollViewer>
+      <Label Content="最新訪問ワールドURL（直近5インスタンス）：" />
+      <TextBox x:Name="lastWorldUrlLinkText1"
+               Margin="8 0 8 0">
+        <TextBox.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="URLをコピー"
+                      Click="MenuItem_Click" />
+            <MenuItem Header="URLを開く"
+                      Click="MenuItemOpenLink_Click" />
+          </ContextMenu>
+        </TextBox.ContextMenu>
+      </TextBox>
+      <TextBox x:Name="lastWorldUrlLinkText2"
+               Margin="8 0 8 0">
+        <TextBox.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="URLをコピー"
+                      Click="MenuItem_Click" />
+            <MenuItem Header="URLを開く"
+                      Click="MenuItemOpenLink_Click" />
+          </ContextMenu>
+        </TextBox.ContextMenu>
+      </TextBox>
+      <TextBox x:Name="lastWorldUrlLinkText3"
+               Margin="8 0 8 0">
+        <TextBox.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="URLをコピー"
+                      Click="MenuItem_Click" />
+            <MenuItem Header="URLを開く"
+                      Click="MenuItemOpenLink_Click" />
+          </ContextMenu>
+        </TextBox.ContextMenu>
+      </TextBox>
+      <TextBox x:Name="lastWorldUrlLinkText4"
+               Margin="8 0 8 0">
+        <TextBox.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="URLをコピー"
+                      Click="MenuItem_Click" />
+            <MenuItem Header="URLを開く"
+                      Click="MenuItemOpenLink_Click" />
+          </ContextMenu>
+        </TextBox.ContextMenu>
+      </TextBox>
+      <TextBox x:Name="lastWorldUrlLinkText5"
+               Margin="8 0 8 0">
+        <TextBox.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="URLをコピー"
+                      Click="MenuItem_Click" />
+            <MenuItem Header="URLを開く"
+                      Click="MenuItemOpenLink_Click" />
+          </ContextMenu>
+        </TextBox.ContextMenu>
+      </TextBox>
+      <StatusBar VerticalAlignment="Bottom"
+                 HorizontalAlignment="Right">
+        <Label x:Name="statusBar"
+               Content="" />
+      </StatusBar>
+    </StackPanel>
+  </DockPanel>
+</Window>
