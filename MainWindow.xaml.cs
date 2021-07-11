@@ -33,6 +33,7 @@ namespace VRCSupportWindow
         private bool _is_analyzing = false;
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        //App.xaml.csのApplication_Startupからコマンドライン引数をもらって起動
         public MainWindow(StartupEventArgs e)
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace VRCSupportWindow
                     case "/autostart":
                         _Button_RunExecAnalyzeLog();
                         break;
+                        
                     default:
                         break;
                 }
