@@ -103,6 +103,14 @@ namespace VRCSupportWindow
             OpenBrowser(nameText);
             return;
         }
+        private void MenuItemCopyLog_Click(object sender, RoutedEventArgs e)
+        {
+            var item = (MenuItem)sender;
+            TextBlock parentItem = ((e.Source as MenuItem).Parent as ContextMenu).PlacementTarget as TextBlock;
+            string nameText = parentItem.Text;
+            Clipboard.SetText(nameText);
+            return;
+        }
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             //Windowが表示された直後の処理

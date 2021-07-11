@@ -57,7 +57,14 @@
                    TextWrapping="Wrap"
                    Height="380"
                    Background="{x:Static SystemColors.WindowBrush}"
-                   Text="" />
+                   Text="">
+          <TextBlock.ContextMenu>
+            <ContextMenu>
+              <MenuItem Header="ログをコピー"
+                        Click="MenuItemCopyLog_Click" />
+            </ContextMenu>
+          </TextBlock.ContextMenu>
+        </TextBlock>
       </ScrollViewer>
       <Label Content="最新訪問ワールドURL（直近5インスタンス）：" />
       <TextBox x:Name="lastWorldUrlLinkText1"
